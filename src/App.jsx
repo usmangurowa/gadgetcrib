@@ -1,16 +1,24 @@
 import logo from "./logo.svg";
 import "./App.css";
-import Button from "./Components/Micro/Button";
-import IconButton from "./Components/Micro/IconButton";
-import * as Icons from "react-icons/ai";
+
 import Product from "./Components/Product/Product";
 import Navbar from "./Components/Navbar/Navbar";
+
+import { BrowserRouter, Routes, Route } from "react-router-dom";
+
+import Homepage from "./Pages/Homepage";
+import Products from "./Pages/Products";
 function App() {
   return (
     <>
-      <Navbar />
-      <div className="flex flex-row">
-        <Product />
+      <div className="container">
+        <BrowserRouter>
+          <Navbar />
+          <Routes>
+            <Route exact path="/" element={<Homepage />} />
+            <Route exact path="/products" element={<Products />} />
+          </Routes>
+        </BrowserRouter>
       </div>
     </>
   );

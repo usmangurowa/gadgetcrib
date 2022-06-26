@@ -1,8 +1,11 @@
 import React from "react";
 
-const IconButton = ({ icon }) => {
+const IconButton = ({ icon, ...props }) => {
   return (
-    <button className="rounded-full m-1 p-2 border border-solid border-primary">
+    <button
+      {...props}
+      className="flex-none flex  items-center align-top justify-center w-10 h-10 rounded-full text-secondary border border-secondary"
+    >
       {icon}
     </button>
   );
